@@ -1,0 +1,6 @@
+[submodule "wikimediaserver"]
+	path = wikimediaserver
+	url = https://github.com/therickys93/wikimediaserver.git
+[submodule "wikicontroller"]
+	path = wikicontroller
+	url = https://github.com/therickys93/wikicontroller.git
