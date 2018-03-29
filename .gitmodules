@@ -4,3 +4,9 @@
 [submodule "wikicontroller"]
 	path = wikicontroller
 	url = https://github.com/therickys93/wikicontroller.git
+[submodule "wikiredis"]
+	path = wikiredis
+	url = https://github.com/therickys93/wikiredis.git
+[submodule "wikiproxy"]
+	path = wikiproxy
+	url = https://github.com/therickys93/wikiproxy.git
