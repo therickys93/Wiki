@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  redis:
+    image: therickys93/wikiredis
+    ports:
+      - "6379:6379"
+    networks:
+      - backbone
+
+  controller:
+    image: therickys93/wikicontroller
+    environment:
+      - REDIS_HOST=redis
+    networks:
+      - backbone
+
+  proxy:
+    image: therickys93/wikiproxy
+    ports:
+      - "8080:80"
+    networks:
+      - backbone
+
+networks:
+  backbone:
+    driver: bridge
