@@ -18,7 +18,14 @@ services:
   proxy:
     image: therickys93/wikiproxy
     ports:
-      - "8080:80"
+      - "80:80"
+    networks:
+      - backbone
+
+  mediaserver:
+    image: therickys93/wikimediaserver
+    ports:
+      - "8080:3000"
     networks:
       - backbone
 
