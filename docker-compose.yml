@@ -11,7 +11,7 @@ services:
   controller:
     image: therickys93/wikicontroller
     environment:
-      - REDIS_HOST=redis
+      - HOST=redis
     networks:
       - backbone
 
