@@ -13,3 +13,12 @@
 [submodule "wikirediscommander"]
 	path = wikirediscommander
 	url = https://github.com/therickys93/wikirediscommander.git
+[submodule "wikiandroid"]
+	path = wikiandroid
+	url = https://github.com/therickys93/wikiandroid.git
+[submodule "wikiapi"]
+	path = wikiapi
+	url = https://github.com/therickys93/wikiapi.git
+[submodule "wikiarduino"]
+	path = wikiarduino
+	url = https://github.com/therickys93/wikiarduino.git
