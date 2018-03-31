@@ -29,6 +29,15 @@ services:
     networks:
       - backbone
 
+  rediscommander:
+    image: therickys93/wikirediscommander
+    command: redis-commander --address 0.0.0.0 --port 8081 --redis-host redis
+    ports:
+      - "8081:8081"
+    networks:
+      - backbone
+
+
 networks:
   backbone:
     driver: bridge
