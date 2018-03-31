@@ -10,3 +10,6 @@
 [submodule "wikiproxy"]
 	path = wikiproxy
 	url = https://github.com/therickys93/wikiproxy.git
+[submodule "wikirediscommander"]
+	path = wikirediscommander
+	url = https://github.com/therickys93/wikirediscommander.git
