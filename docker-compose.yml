@@ -2,35 +2,35 @@ version: '2'
 
 services:
   redis:
-    image: therickys93/wikiredis
+    build: wikiredis
     ports:
       - "6379:6379"
     networks:
       - backbone
 
   controller:
-    image: therickys93/wikicontroller
+    build: wikicontroller
     environment:
       - HOST=redis
     networks:
       - backbone
 
   proxy:
-    image: therickys93/wikiproxy
+    build: wikiproxy
     ports:
       - "80:80"
     networks:
       - backbone
 
   mediaserver:
-    image: therickys93/wikimediaserver
+    build: wikimediaserver
     ports:
       - "3000:3000"
     networks:
       - backbone
 
   rediscommander:
-    image: therickys93/wikirediscommander
+    build: wikirediscommander
     command: redis-commander --address 0.0.0.0 --port 8081 --redis-host redis
     ports:
       - "8081:8081"
@@ -38,7 +38,7 @@ services:
       - backbone
 
   server:
-    image: therickys93/wikiserver
+    build: wikiserver
     ports:
       - "8080:8080"
     networks:

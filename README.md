@@ -15,5 +15,5 @@
  Per scaricare testarlo usare:
  - git clone https://github.com/therickys93/Wiki.git
  - git submodule update --init
- - bash build.sh
+ - docker-compose build
  - docker-compose up
