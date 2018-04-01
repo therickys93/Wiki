@@ -22,3 +22,6 @@
 [submodule "wikiarduino"]
 	path = wikiarduino
 	url = https://github.com/therickys93/wikiarduino.git
+[submodule "wikiserver"]
+	path = wikiserver
+	url = https://github.com/therickys93/wikiserver.git
