@@ -25,7 +25,7 @@ services:
   mediaserver:
     image: therickys93/wikimediaserver
     ports:
-      - "8080:3000"
+      - "3000:3000"
     networks:
       - backbone
 
@@ -37,6 +37,12 @@ services:
     networks:
       - backbone
 
+  server:
+    image: therickys93/wikiserver
+    ports:
+      - "8080:8080"
+    networks:
+      - backbone
 
 networks:
   backbone:
