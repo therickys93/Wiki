@@ -25,3 +25,6 @@
 [submodule "wikiserver"]
 	path = wikiserver
 	url = https://github.com/therickys93/wikiserver.git
+[submodule "wikidata"]
+	path = wikidata
+	url = https://github.com/therickys93/wikidata.git

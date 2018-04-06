@@ -10,9 +10,21 @@ services:
 
   controller:
     build: wikicontroller
+    depends_on:
+      - redis
     environment:
       - HOST=redis
     networks:
+      - backbone
+
+  data:
+    build: wikidata
+    environment:
+      - FTP_SERVER=<your_server>
+      - FTP_USERNAME=<your_username>
+      - FTP_PASSWORD=<your_password>
+      - REDIS=redis
+    networks: 
       - backbone
 
   proxy:
