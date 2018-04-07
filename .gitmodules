@@ -28,3 +28,6 @@
 [submodule "wikidata"]
 	path = wikidata
 	url = https://github.com/therickys93/wikidata.git
+[submodule "wikidatabase"]
+	path = wikidatabase
+	url = https://github.com/therickys93/wikidatabase.git

@@ -17,6 +17,11 @@ services:
     networks:
       - backbone
 
+  postgres:
+    build: wikidatabase
+    environment:
+     - POSTGRES_PASSWORD=example
+
   data:
     build: wikidata
     environment:
