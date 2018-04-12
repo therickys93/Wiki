@@ -29,6 +29,10 @@ services:
       - FTP_USERNAME=<your_username>
       - FTP_PASSWORD=<your_password>
       - REDIS=redis
+      - POSTGRES=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_DB=wiki
     networks: 
       - backbone
 
@@ -41,10 +45,6 @@ services:
 
   mediaserver:
     build: wikimediaserver
-    environment:
-      - WIKISERVER_PORT=8080
-      - WIKISERVER_HOST=localhost
-      - WIKISERVER_WOEID=716231
     ports:
       - "3000:3000"
     networks:
@@ -60,6 +60,14 @@ services:
 
   server:
     build: wikiserver
+    environment:
+      - WIKISERVER_PORT=8080
+      - WIKISERVER_HOST=localhost
+      - WIKISERVER_WOEID=716231
+      - WIKISERVER_DB_HOST=postgres
+      - WIKISERVER_DB_PORT=5432
+      - WIKISERVER_DB_DATABASE=wiki
+      - WIKISERVER_CONTROLLER_URL=http://controller
     ports:
       - "8080:8080"
     networks:
