@@ -14,7 +14,7 @@ clean:
 	rm -v -Rf node_modules/ && \
 	cd .. && \
 	cd wikimediaserver && \
-	rmi -v -Rf node_modules/ bower_components/ && \
+	rm -v -Rf node_modules/ bower_components/ && \
 	cd .. && \
 	cd wikiserver && \
 	./gradlew clean && \
