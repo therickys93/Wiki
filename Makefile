@@ -11,10 +11,10 @@ install:
 
 clean:
 	cd wikicontroller && \
-	rm -Rf node_modules/ && \
+	rm -v -Rf node_modules/ && \
 	cd .. && \
 	cd wikimediaserver && \
-	rm -Rf node_modules/ bower_components/ && \
+	rmi -v -Rf node_modules/ bower_components/ && \
 	cd .. && \
 	cd wikiserver && \
 	./gradlew clean && \
