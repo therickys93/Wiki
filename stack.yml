@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  redis:
+    image: 127.0.0.1:5000/wikiredis
+    build: wikiredis
+    ports:
+      - "6379:6379"
+
+  controller:
+    image: 127.0.0.1:5000/wikicontroller
+    build: wikicontroller
+    depends_on:
+      - redis
+    environment:
+      - HOST=redis
+
+  postgres:
+    image: 127.0.0.1:5000/wikidatabase
+    build: wikidatabase
+    environment:
+     - POSTGRES_PASSWORD=example
+
+  data:
+    image: 127.0.0.1:5000/wikidata
+    build: wikidata
+    environment:
+      - FTP_SERVER=<your_server>
+      - FTP_USERNAME=<your_username>
+      - FTP_PASSWORD=<your_password>
+      - REDIS=redis
+      - POSTGRES=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_DB=wiki
+
+  proxy:
+    image: 127.0.0.1:5000/wikiproxy
+    build: wikiproxy
+    ports:
+      - "80:80"
+
+  mediaserver:
+    image: 127.0.0.1:5000/wikimediaserver
+    build: wikimediaserver
+    ports:
+      - "3000:3000"
+
+  rediscommander:
+    image: 127.0.0.1:5000/wikirediscommander
+    build: wikirediscommander
+    command: redis-commander --address 0.0.0.0 --port 8081 --redis-host redis
+    ports:
+      - "8081:8081"
+
+  server:
+    image: 127.0.0.1:5000/wikiserver
+    build: wikiserver
+    environment:
+      - WIKISERVER_PORT=8080
+      - WIKISERVER_HOST=localhost
+      - WIKISERVER_WOEID=716231
+      - WIKISERVER_DB_HOST=postgres
+      - WIKISERVER_DB_PORT=5432
+      - WIKISERVER_DB_DATABASE=wiki
+      - WIKISERVER_CONTROLLER_URL=http://controller
+    ports:
+      - "8080:8080"

@@ -5,7 +5,7 @@
 docker service create --name registry --publish published=5000,target=5000 registry:2
 docker-compose build
 docker-compose up -d
-docker-compose ls
+docker-compose ps
 docker-compose down --volumes
 docker-compose push 
-docker stack deploy --compose-file docker-compose.yml wiki
+docker stack deploy --compose-file stack.yml wiki
