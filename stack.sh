@@ -8,4 +8,4 @@ docker-compose up -d
 docker-compose ps
 docker-compose down --volumes
 docker-compose push 
-docker stack deploy --compose-file stack.yml wiki
+docker stack deploy --compose-file stack.yml --with-registry-auth wiki
