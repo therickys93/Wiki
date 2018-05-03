@@ -7,6 +7,9 @@ install:
 	cd .. && \
 	cd wikiserver && \
 	./gradlew clean stage && \
+	cd .. && \
+	cd wikibot && \
+	./gradlew clean stage && \
 	cd ..
 
 clean:
@@ -17,5 +20,8 @@ clean:
 	rm -v -Rf node_modules/ bower_components/ && \
 	cd .. && \
 	cd wikiserver && \
+	./gradlew clean && \
+	cd .. && \
+	cd wikibot && \
 	./gradlew clean && \
 	cd ..

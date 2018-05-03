@@ -21,6 +21,14 @@ services:
     environment:
      - POSTGRES_PASSWORD=example
 
+  bot:
+    image: 127.0.0.1:5000/wikibot
+    build: wikibot
+    environment:
+      - WIKITELEGRAM_BOT_TOKEN=<telegram_bot_token>
+      - WIKITELEGRAM_AUTHORIZED_USERS=user_id1,user_id2,user_id3
+      - WIKITELEGRAM_WIKI_SERVER=http://controller
+
   data:
     image: 127.0.0.1:5000/wikidata
     build: wikidata
