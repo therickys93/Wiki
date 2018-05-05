@@ -26,8 +26,6 @@ services:
 
   mongodb:
     build: wikimongodb
-    ports:
-      - "27017:27017"
     networks:
       - backbone
 

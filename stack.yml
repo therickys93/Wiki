@@ -24,9 +24,7 @@ services:
   mongodb:
     image: 127.0.0.1:5000/wikimongodb
     build: wikimongodb
-    ports:
-      - "27017:27017"
-
+    
   bot:
     image: 127.0.0.1:5000/wikibot
     build: wikibot
