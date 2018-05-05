@@ -34,3 +34,6 @@
 [submodule "wikibot"]
 	path = wikibot
 	url = https://github.com/therickys93/wikibot.git
+[submodule "wikimongodb"]
+	path = wikimongodb
+	url = https://github.com/therickys93/wikimongodb.git
