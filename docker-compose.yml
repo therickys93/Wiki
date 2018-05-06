@@ -53,6 +53,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=example
       - POSTGRES_DB=wiki
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
     networks: 
       - backbone
 
