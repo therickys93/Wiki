@@ -37,3 +37,6 @@
 [submodule "wikimongodb"]
 	path = wikimongodb
 	url = https://github.com/therickys93/wikimongodb.git
+[submodule "wikidocumentation"]
+	path = wikidocumentation
+	url = https://github.com/therickys93/wikidocumentation
