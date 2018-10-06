@@ -12,8 +12,8 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
-  - docker-compose build
-  - docker-compose up -d
-  - docker-compose ps
-  - docker-compose down --volumes
+  - docker-compose -f stack.yml build
+  - docker-compose -f stack.yml up -d
+  - docker-compose -f stack.yml ps
+  - docker-compose -f stack.yml down --volumes
 

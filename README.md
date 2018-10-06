@@ -7,13 +7,14 @@
  - wikiandroid
  - wikiapi
  - wikiarduino
+ - wikibot
  - wikicontroller
+ - wikidata
+ - wikidatabase
+ - wikidocumentation
  - wikimediaserver
+ - wikimongodb
  - wikiproxy
  - wikiredis
-
- Per scaricare testarlo usare:
- - git clone https://github.com/therickys93/Wiki.git
- - git submodule update --init
- - docker-compose build
- - docker-compose up
+ - wikirediscommander
+ - wikiserver
