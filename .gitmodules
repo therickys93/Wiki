@@ -40,3 +40,6 @@
 [submodule "wikidocumentation"]
 	path = wikidocumentation
 	url = https://github.com/therickys93/wikidocumentation
+[submodule "WikiSDK"]
+	path = WikiSDK
+	url = https://github.com/therickys93/WikiSDK.git
