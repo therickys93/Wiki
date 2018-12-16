@@ -43,3 +43,6 @@
 [submodule "WikiSDK"]
 	path = WikiSDK
 	url = https://github.com/therickys93/WikiSDK.git
+[submodule "wikictl"]
+	path = wikictl
+	url = https://github.com/therickys93/wikictl.git
