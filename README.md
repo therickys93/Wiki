@@ -18,3 +18,8 @@
  - wikiredis
  - wikirediscommander
  - wikiserver
+
+
+ ## link utili
+
+ https://about.gitlab.com/2018/08/02/using-the-gitlab-ci-slash-cd-for-smart-home-configuration-management
