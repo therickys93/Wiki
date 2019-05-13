@@ -24,18 +24,6 @@ services:
   mongodb:
     image: 127.0.0.1:5000/wikimongodb
     build: wikimongodb
-    
-  bot:
-    image: 127.0.0.1:5000/wikibot
-    build: wikibot
-    environment:
-      - WIKITELEGRAM_BOT_TOKEN=<telegram_bot_token>
-      - WIKITELEGRAM_AUTHORIZED_USERS=user_id1,user_id2,user_id3
-      - WIKITELEGRAM_WIKI_SERVER=http://controller
-      - WIKITELEGRAM_MONGODB_HOST=mongodb
-      - WIKITELEGRAM_MONGODB_PORT=27017
-      - WIKITELEGRAM_MONGODB_DB=wikibot
-      - WIKITELEGRAM_MONGODB_COLLECTION=telegram
 
   data:
     image: 127.0.0.1:5000/wikidata
