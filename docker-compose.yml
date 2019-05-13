@@ -29,19 +29,6 @@ services:
     networks:
       - backbone
 
-  bot:
-    build: wikibot
-    environment:
-      - WIKITELEGRAM_BOT_TOKEN=<telegram_bot_token>
-      - WIKITELEGRAM_AUTHORIZED_USERS=user_id1,user_id2,user_id3
-      - WIKITELEGRAM_WIKI_SERVER=http://controller
-      - WIKITELEGRAM_MONGODB_HOST=mongodb
-      - WIKITELEGRAM_MONGODB_PORT=27017
-      - WIKITELEGRAM_MONGODB_DB=wikibot
-      - WIKITELEGRAM_MONGODB_COLLECTION=telegram
-    networks:
-      - backbone
-
   data:
     build: wikidata
     environment:
