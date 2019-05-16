@@ -46,3 +46,6 @@
 [submodule "wikictl"]
 	path = wikictl
 	url = https://github.com/therickys93/wikictl.git
+[submodule "wikiparseserver"]
+	path = wikiparseserver
+	url = https://github.com/therickys93/wikiparseserver.git

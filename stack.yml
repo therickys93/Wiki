@@ -14,6 +14,9 @@ services:
       - redis
     environment:
       - HOST=redis
+      - "SERVER_URL=parseserver"
+      - "APPLICATION_ID=wikiparseserver"
+      - "MASTER_KEY=wikiparseserver_secret"
 
   postgres:
     image: 127.0.0.1:5000/wikidatabase
@@ -24,6 +27,19 @@ services:
   mongodb:
     image: 127.0.0.1:5000/wikimongodb
     build: wikimongodb
+
+  parseserver:
+    image: 127.0.0.1:5000/wikiparseserver
+    build: wikiparseserver
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/parse
+      - APP_ID=wikiparseserver
+      - MASTER_KEY=wikiparseserver_secret
+      - SERVER_URL=http://localhost:1337/parse
+    ports:
+      - "1337:1337"
 
   data:
     image: 127.0.0.1:5000/wikidata
