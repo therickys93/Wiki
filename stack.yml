@@ -34,10 +34,10 @@ services:
     depends_on:
       - mongodb
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017/parse
       - APP_ID=wikiparseserver
-      - MASTER_KEY=wikiparseserver_secret
-      - SERVER_URL=http://localhost:1337/parse
+      - MASTER_KEY=wikiparseserver_keysecret
+      - SERVER_URL=http://wikiparseserver:1337/parse
+      - MONGODB_URI=mongodb://mongodb/wikiparseserver
     ports:
       - "1337:1337"
 
