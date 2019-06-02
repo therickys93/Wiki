@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  redis:
+    image: therickys93/wikiredis
+    volumes:
+      - redis_database:/data
+    ports:
+      - "6379:6379"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
+
+
+  controller:
+    image: therickys93/wikicontroller
+    depends_on:
+      - redis
+    environment:
+      - "HOST=redis"
+      
+  data:
+    image: therickys93/wikidata
+    environment:
+        - REDIS=redis
+    volumes:
+      - data_database:/etc/periodic/15min
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
+        
+  proxy:
+    image: therickys93/wikiproxy
+    ports:
+      - "80:80"
+
+  rediscommander:
+    image: therickys93/wikirediscommander
+    command: redis-commander --address 0.0.0.0 --port 8081 --redis-host redis
+    ports:
+      - "8081:8081"
+
+volumes:
+  redis_database:
+    driver: local
+  data_database:
+    driver: local
