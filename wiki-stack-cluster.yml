@@ -41,9 +41,35 @@ services:
     command: redis-commander --address 0.0.0.0 --port 8081 --redis-host redis
     ports:
       - "8081:8081"
+  
+  postgres:
+    image: therickys93/wikidatabase
+    environment:
+     - POSTGRES_PASSWORD=example
+    volumes:
+     - postgresql_database:/var/lib/postgresql/data
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
+  
+  server:
+    image: therickys93/wikiserver
+    environment:
+      - WIKISERVER_PORT=8080
+      - WIKISERVER_HOST=localhost
+      - WIKISERVER_WOEID=716231
+      - WIKISERVER_DB_HOST=postgres
+      - WIKISERVER_DB_PORT=5432
+      - WIKISERVER_DB_DATABASE=wiki
+      - WIKISERVER_CONTROLLER_URL=http://controller
+    ports:
+      - "8080:8080"
 
 volumes:
   redis_database:
     driver: local
   data_database:
+    driver: local
+  postgresql_database:
     driver: local
