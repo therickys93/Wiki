@@ -1,0 +1,34 @@
+version: '3'
+
+services: 
+  reg-srv:
+    image: registry:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - registry_database:/var/lib/registry
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == node1
+    networks:
+      reg-net:
+        aliases:
+          - reg-serv
+  reg-web:
+    image: hyper/docker-registry-web
+    ports:
+      - 8080:8080
+    environment:
+      - REGISTRY_URL=http://reg-serv:5000/v2
+      - REGISTRY_NAME=localhost:5000
+    networks:
+      - reg-net
+      
+networks:
+  reg-net:
+    driver: overlay
+
+volumes:
+  registry_database:
+    driver: local
