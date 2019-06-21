@@ -11,14 +11,6 @@ services:
       placement:
         constraints:
           - node.hostname == node1
-    networks:
-      reg-net:
-        aliases:
-          - reg-serv
-          
-networks:
-  reg-net:
-    driver: overlay
 
 volumes:
   registry_database:
